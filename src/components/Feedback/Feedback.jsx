@@ -11,12 +11,16 @@ class Feedback extends React.Component {
   }
 
   handleIncrement = evt => {
-    const { name } = evt.target;
-      
+    const { name } = evt.target;   
+    
     this.setState(prevState => {
       return { [name]: prevState[name] + 1 };
     });
   }
+
+  // countTotalFeedback()
+    
+  // countPositiveFeedbackPercentage()
 
   render() {
     return (
@@ -32,6 +36,8 @@ class Feedback extends React.Component {
         <p>Good: {this.state.good}</p>
         <p>Neutral: {this.state.neutral}</p>
         <p>Bad: {this.state.bad}</p>
+        <p>Total: </p>
+        <p>Positive feedback %</p>
       </div>  
     )
   }
