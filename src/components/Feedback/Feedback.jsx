@@ -14,13 +14,17 @@ class Feedback extends React.Component {
     const { name } = evt.target;   
     
     this.setState(prevState => {
-      return { [name]: prevState[name] + 1 };
-    });
+      return { [name]: prevState[name] + 1 }
+    })
   }
 
-  // countTotalFeedback()
+  countTotalFeedback() {
+    return this.state.good + this.state.neutral + this.state.bad;
+  }
     
-  // countPositiveFeedbackPercentage()
+  countPositiveFeedbackPercentage() {
+    return this.state.good / (this.state.good + this.state.neutral + this.state.bad);
+  }
 
   render() {
     return (
@@ -36,8 +40,8 @@ class Feedback extends React.Component {
         <p>Good: {this.state.good}</p>
         <p>Neutral: {this.state.neutral}</p>
         <p>Bad: {this.state.bad}</p>
-        <p>Total: </p>
-        <p>Positive feedback %</p>
+        <p>Total: {this.countTotalFeedback()}</p>
+        <p>Positive feedback {this.countPositiveFeedbackPercentage()}%</p>
       </div>  
     )
   }
