@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
 
 class Feedback extends React.Component {
   constructor() {
@@ -13,10 +11,11 @@ class Feedback extends React.Component {
   }
 
   handleIncrement = evt => {
-    const { name, value } = evt.target;
-    console.log(evt.target);
-    console.log(name);
-    this.setState({ [name]: this.state[name] +=1 });
+    const { name } = evt.target;
+      
+    this.setState(prevState => {
+      return { [name]: prevState[name] + 1 };
+    });
   }
 
   render() {
