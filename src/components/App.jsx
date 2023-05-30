@@ -38,7 +38,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1 className={css.title}>Expresso Cafe</h1>
+        <h1 className={css.title}>Cafe Expresso</h1>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={feedbackOptions}
