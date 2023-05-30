@@ -3,6 +3,7 @@ import Section from "./Section/Section";
 import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
 import Statistics from "./Statistics/Statistics";
 import Notification from "./Notification/Notification";
+import css from "./App.module.css";
 
 class App extends React.Component {
   constructor() {
@@ -37,11 +38,12 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1>Expresso Cafe</h1>
+        <h1 className={css.title}>Expresso Cafe</h1>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={feedbackOptions}
-            onLeaveFeedback={this.handleIncrement} />   
+            onLeaveFeedback={this.handleIncrement}
+          />   
         </Section>
         <Section title="Ststistics">
           {this.countTotalFeedback() > 0
@@ -55,8 +57,6 @@ class App extends React.Component {
             )
             : (  <Notification message={"There is no feedback"}/> )          
           }
-
-
          </Section> 
       </div>
     )
