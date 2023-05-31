@@ -5,10 +5,12 @@ function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <div className={css.container}>
       {options.map(option => (
-        <button key={option}
+        <button
+          key={option}
           name={option}
           onClick={onLeaveFeedback}
-          className={css.button}>{option}
+          className={css.button}
+        >{option}
         </button>
       )) 
       }
